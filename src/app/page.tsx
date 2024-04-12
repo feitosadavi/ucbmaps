@@ -1,11 +1,11 @@
 'use client'
 
-import Input from 'src/app/components/Input';
-import Button from 'src/app/components/Button';
+import Input from '@/app/components/Input';
+import Button from '@/app/components/Button';
 import { useRouter } from 'next/navigation';
 
 import React, { useRef, useEffect, useState, WheelEventHandler } from 'react';
-import { Chart } from 'src/app/components/Chart';
+import { Chart } from '@/app/components/Chart';
 
 interface Point {
   x: number;
@@ -27,8 +27,8 @@ type Map = {
 
 export default function Home () {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  
-  
+
+
   const [latitude, setLatitude] = useState<number>(0);
   const [longitude, setLongitude] = useState<number>(0);
 
@@ -75,7 +75,7 @@ export default function Home () {
   }, [])
 
   React.useEffect(() => {
-    console.log({latitude, longitude})
+    console.log({ latitude, longitude })
   }, [latitude])
 
   const personRef = useRef<HTMLDivElement>(null)
@@ -88,7 +88,7 @@ export default function Home () {
       style.top = '10px';
     }
   }
-  
+
   const changePersonPosition = () => {
     const style = personRef.current?.style;
     if (style) {
@@ -116,12 +116,12 @@ export default function Home () {
         }}
       ></div>
     </main>
-    );
-  }
-  //
-  //   <canvas
-  //     width={viewportSize.width}
-  //     height={viewportSize.height}
-  //   ref={canvasRef}
-  //   style={{background: 'aqua'}}
-  // />
+  );
+}
+//
+//   <canvas
+//     width={viewportSize.width}
+//     height={viewportSize.height}
+//   ref={canvasRef}
+//   style={{background: 'aqua'}}
+// />
